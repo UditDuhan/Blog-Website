@@ -92,7 +92,6 @@ app.get("/blogs/:id", (req, res) => {
 });
 
 app.get("/blogs/:id/edit", (req, res) => {
-    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.findById(req.params.id, (err, foundBlog) => {
         if (err) {
             res.redirect("/blogs");
@@ -105,6 +104,7 @@ app.get("/blogs/:id/edit", (req, res) => {
 });
 
 app.put("/blogs/:id", (req, res) => {
+    req.body.blog.body = req.sanitize(req.body.blog.body);
     Blog.findByIdAndUpdate(req.params.id, req.body.blog, (err, updatedBlog) => {
         if (err) {
             res.redirect("/blogs");
