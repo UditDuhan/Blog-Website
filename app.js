@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
-mongoose.connect("mongodb://localhost:27017/blog-app", {
+mongoose.connect("mongodb+srv://thor:x4wEe1OLXAKXVEPD@blogcluster.2hn3y.mongodb.net/blogCluster?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false
@@ -124,6 +124,6 @@ app.delete("/blogs/:id", (req, res) => {
     });
 });
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 3000, process.env.IP, () => {
     console.log("Blog App Server has started.");
 });
