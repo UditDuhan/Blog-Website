@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({
 app.use(expressSanitizer());
 app.use(methodOverride("_method"));
 
-mongoose.connect("mongodb+srv://thor:x4wEe1OLXAKXVEPD@blogcluster.2hn3y.mongodb.net/blogCluster?retryWrites=true&w=majority", {
+mongoose.connect("mongodb+srv://thor:u%40%23%26(%5Ed%23%24%5E%24%26i!%23%40%24%40%23*%5Et@blogcluster.2hn3y.mongodb.net/blogCluster?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         useFindAndModify: false
